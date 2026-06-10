@@ -44,10 +44,6 @@ jobs:
             docker stop teras_software || true
             docker rm teras_software || true
 
-            docker run -d \
-              --name teras_software \
-              --restart always \
-              -p 3000:80 \
-              ghcr.io/ridhoworkaholic/teras_software:latest
+            docker compose up -d
 
             docker image prune -af
