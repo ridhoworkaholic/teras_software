@@ -1,0 +1,10 @@
+services:
+  portfolio:
+    image: ghcr.io/ridhoworkaholic/teras_software:latest
+
+    container_name: teras_software
+
+    restart: always
+
+    ports:
+      - "3000:80"
