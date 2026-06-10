@@ -1,0 +1,10 @@
+export { Nav } from './Nav';
+export { Hero } from './Hero';
+export { Portfolio } from './Portfolio';
+export { Services } from './Services';
+export { Pricing } from './Pricing';
+export { Process } from './Process';
+export { About } from './About';
+export { FAQ } from './FAQ';
+export { Contact } from './Contact';
+export { Footer } from './Footer';

@@ -1,1 +1,71 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #1e5bff;
+  --color-primary-dark: #1544cc;
+
+  --color-background: #ffffff;
+  --color-surface: #f6f8fb;
+
+  --color-text: #0b1220;
+  --color-text-secondary: #4b5563;
+
+  --color-border: #e5e7eb;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --radius: 6px;
+  --radius-lg: 8px;
+
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+}
+
+@layer base {
+  :root {
+    --color-primary: #1e5bff;
+    --color-primary-dark: #1544cc;
+    --color-background: #ffffff;
+    --color-surface: #f6f8fb;
+    --color-text: #0b1220;
+    --color-text-secondary: #4b5563;
+    --color-border: #e5e7eb;
+    --radius: 6px;
+    --radius-lg: 8px;
+    --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32;
+  }
+
+  .container-max {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .section-surface {
+    background-color: var(--color-surface);
+  }
+}
