@@ -29,7 +29,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/portfolio:latest
+          tags: ghcr.io/${{ github.repository_owner }}/teras_software:latest
 
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v1.2.0
@@ -37,8 +37,9 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{secrets.VPS_PORT}}
           script: |
-            cd /opt/portfolio
+            cd /opt/teras_software/teras_software
 
             docker compose pull
 
