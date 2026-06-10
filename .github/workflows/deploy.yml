@@ -24,7 +24,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Image
+      - name: Build and Push Image
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -37,12 +37,17 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          port: ${{secrets.VPS_PORT}}
+          port: ${{ secrets.VPS_PORT }}
           script: |
-            cd /opt/teras_software/teras_software
+            docker pull ghcr.io/ridhoworkaholic/teras_software:latest
 
-            docker compose pull
+            docker stop teras_software || true
+            docker rm teras_software || true
 
-            docker compose up -d
+            docker run -d \
+              --name teras_software \
+              --restart always \
+              -p 3000:80 \
+              ghcr.io/ridhoworkaholic/teras_software:latest
 
             docker image prune -af
