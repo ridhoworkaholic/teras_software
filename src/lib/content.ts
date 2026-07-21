@@ -50,6 +50,18 @@ export const PROJECTS: Project[] = [
     category: "web",
     images: ["/portfolio/Desktop_-_6.png"],
   },
+
+  {
+    id: "web-travelumroh",
+    title: "Baitullah Mubarak Wisata",
+    description:
+      "Biro perjalanan Umroh dan Haji resmi Kemenag RI. Layanan premium, pembimbing berpengalaman, hotel dekat Masjidil Haram & Nabawi, dan harga transparan.",
+    stack: ["ReactJs", "Tailwind"],
+    role: "Full Development",
+    category: "web",
+    images: ["/portfolio/travel-umroh.png"],
+    link: "https://travel-umroh-haji.netlify.app/",
+  },
   {
     id: "web-javanice",
     title: "PT Javanice Indonesia",
