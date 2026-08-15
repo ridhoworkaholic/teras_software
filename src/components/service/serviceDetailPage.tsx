@@ -10,6 +10,7 @@ import {
 
 import { SERVICES } from "./contentService";
 import { CONTACT } from "../../lib/content";
+import { Nav } from "../landing";
 
 export default function ServiceDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -65,6 +66,7 @@ export default function ServiceDetailPage() {
 
   return (
     <main className="min-h-screen bg-[#05090f] text-white">
+      <Nav/>
       {/* =====================================================
           HERO
       ===================================================== */}
@@ -661,7 +663,7 @@ export default function ServiceDetailPage() {
               </p>
 
               <Link
-                to="/contact"
+                to={CONTACT.whatsappLink}
                 className="
                   group
                   mt-8
