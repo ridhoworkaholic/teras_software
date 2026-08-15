@@ -1,59 +1,12 @@
 import {
   ArrowRight,
-  Layers3,
-  Smartphone,
 } from "lucide-react";
 import { useEffect } from "react";
 
 import { CONTACT } from "../../lib/content";
 import { Nav } from "../landing";
-
-type Service = {
-  number: string;
-  title: string;
-  description: string;
-  features: string[];
-  icon: React.ElementType;
-};
-
-const SERVICES: Service[] = [
-  {
-    number: "01",
-    title: "Website Development",
-    description:
-      "A professional website built around your business goals, customers, and long-term growth.",
-    features: [
-      "Business-focused structure",
-      "Responsive experience",
-      "SEO-ready architecture",
-    ],
-    icon: Layers3,
-  },
-  {
-    number: "02",
-    title: "UI/UX Design",
-    description:
-      "Clear and intuitive digital experiences that help people understand your business and take action.",
-    features: [
-      "Clear information architecture",
-      "Intuitive user journeys",
-      "Premium visual design",
-    ],
-    icon: Smartphone,
-  },
-  {
-    number: "03",
-    title: "App Development",
-    description:
-      "We build reliable digital applications that turn business ideas, workflows, and customer needs into useful products.",
-    features: [
-      "Custom digital products",
-      "Mobile & web applications",
-      "Scalable & maintainable systems",
-    ],
-    icon: Smartphone,
-  },
-];
+import { Link } from "react-router-dom";
+import { SERVICES, type Service } from "./contentService";
 
 const PROCESS = [
   {
@@ -183,7 +136,8 @@ function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon;
 
   return (
-    <article
+    <Link
+      to={`/service/${service.slug}`}
       className="
         group
         relative
@@ -260,13 +214,13 @@ function ServiceCard({ service }: { service: Service }) {
           </li>
         ))}
       </ul>
-    </article>
+    </Link>
   );
 }
 
 function ProcessItem({ item }: { item: (typeof PROCESS)[number] }) {
   return (
-    <article className="relative border-t border-white/[0.08] py-7">
+    <article className="relative border-t border-white/8 py-7">
       <div className="grid gap-4 md:grid-cols-[80px_180px_1fr] md:items-start md:gap-8">
         <span className="text-[10px] font-medium tracking-[0.2em] text-[#d8b47a]">
           {item.number}

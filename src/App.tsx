@@ -13,6 +13,7 @@ import {
 import AboutUsPage from "./components/about/aboutUsPage";
 import WorkPage from "./components/portofolio/portofolioPage";
 import ServicesPage from "./components/service/servicePage";
+import ServiceDetailPage from "./components/service/serviceDetailPage";
 
 function HomePage() {
   return (
@@ -37,7 +38,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/service" element={<ServicesPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+
+        <Route path="/service/:slug" element={<ServiceDetailPage />} />
 
         <Route path="/works" element={<WorkPage />} />
 

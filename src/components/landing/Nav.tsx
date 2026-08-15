@@ -3,7 +3,7 @@ import { useState } from "react";
 import { CONTACT } from "../../lib/content";
 
 const NAV_LINKS = [
-  { label: "Services", href: "/service" },
+  { label: "Services", href: "/services" },
   { label: "Work", href: "/works" },
   { label: "About", href: "/about" },
 ];
