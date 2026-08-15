@@ -112,7 +112,7 @@ export default function ServiceDetailPage() {
 
               <li>
                 <Link
-                  to="/service"
+                  to="/services"
                   className="transition-colors hover:text-white"
                 >
                   Services
